@@ -1,0 +1,17 @@
+{
+  "name": "vue-components",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vue": "^3.5.13"
+  },
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

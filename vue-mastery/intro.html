@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Mastery</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--<h1>{{ product }}</h1>-->
+        <div class="nav-bar"></div>
+
+        <div class="cart">Cart({{ cart }})</div>
+
+            <div class="product-display">
+                <div class="product-container">
+                    <div class="product-image">
+                        <!-- image goes here - v:bind:src directive. used to bind an attribute (src) to an expression ("image"). :src shorthand-->
+                        <img v-bind:src="image" alt="socks">
+                    </div>
+                    <div class="product-info">
+                        <h1>{{ product }}</h1>
+                        <!-- solution -->
+                        <!--<a :href="url">Made by Vue Mastery</a> -->
+                        <!-- solution -->
+
+                        <p v-if="inStock">In Stock</p>
+                        <p v-else>Out of Stock</p> 
+                        <!-- alternative - v-show (toggles between the element's visibility)-->
+                        <ul>
+                            <li v-for="detail in details">{{ detail }}</li>
+                        </ul>
+                        <div v-for="variant in variants" :key="variant.id">
+                            <p>{{ variant.color }}</p>
+                            <img v-bind:src="variant.image" alt="socks">
+                        </div>
+                        
+                        <ul>
+                            <li v-for="(size, index) in sizes" :key="index">{{size}}</li>
+                        </ul>
+                        <button class="button" v-on:click="addToCart">Add a Cart</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <!-- import App -->
+    <script src="./main.js"></script>
+
+    <!--mount App-->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>

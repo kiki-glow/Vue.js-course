@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Basics</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        #app {
+            width: 300px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a {
+            text-decoration:color-mix(in hsl shorter hue, color percentage, color percentage);
+            font-family: fantasy;
+            font-size: larger;
+            cursor: pointer;
+        }
+        a::after {
+            content: "🚀";
+        }
+        a:hover {
+            color: green;
+            text-decoration: none;
+            transition: cubic-bezier(1, 0, 0, 1);
+        }
+        a:hover::after {
+            content: "🔥";
+            color:green;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- v-bind directive for binding attributes -->
+        <!--<a v-bind:href="url">my portfolio website!</a>-->
+        <a :href="url">my portfolio website!</a>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
